@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Profissional - Dominik do Nascimento de Jesus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #0066cc;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+        }
+
+        .status {
+            display: inline-block;
+            background: #e8f4f8;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 30px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #0066cc;
+            border-left: 4px solid #0066cc;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        /* About */
+        .about-content {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .skill-card {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #0066cc;
+        }
+
+        .skill-card h4 {
+            color: #0066cc;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .skill-level label {
+            flex: 0 0 100px;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 8px;
+            background: #ddd;
+            border-radius: 4px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0066cc, #0088ff);
+            border-radius: 4px;
+        }
+
+        .progress-text {
+            flex: 0 0 40px;
+            text-align: right;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Certifications */
+        .cert-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .cert-box h4 {
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .cert-box .progress {
+            background: #e2e3e5;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .cert-box .progress-bar {
+            background: #ffc107;
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Technologies */
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .tech-item {
+            background: #f0f7ff;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px solid #0066cc;
+        }
+
+        .tech-item strong {
+            display: block;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+
+        .tech-item span {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        /* Roadmap */
+        .roadmap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .roadmap-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .roadmap-item.q3 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .roadmap-item.q4 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .roadmap-item.y2027 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .roadmap-item h4 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .roadmap-item p {
+            font-size: 0.95em;
+            opacity: 0.95;
+        }
+
+        /* Contact */
+        .contact-info {
+            background: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #0066cc;
+            text-align: center;
+        }
+
+        .contact-info a {
+            display: inline-block;
+            margin: 0 15px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            a {
+                text-decoration: underline;
+                color: #0066cc;
+            }
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #0066cc;
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 2px;
+        }
+
+        .badge.python {
+            background: #3776ab;
+        }
+
+        .badge.javascript {
+            background: #f7df1e;
+            color: #333;
+        }
+
+        .badge.c {
+            background: #a8b9cc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>👨‍💻 Dominik do Nascimento de Jesus</h1>
+            <p>Portfólio Profissional - Análise e Desenvolvimento de Sistemas</p>
+            <div class="status">🎓 Estudante | 🚀 Em Desenvolvimento Contínuo</div>
+        </div>
+
+        <!-- Sobre -->
+        <div class="section">
+            <h2 class="section-title">📋 Sobre Mim</h2>
+            <div class="about-content">
+                <p>
+                    Sou um profissional em início de carreira na área de tecnologia, atualmente cursando 
+                    <strong>Análise e Desenvolvimento de Sistemas</strong>. Tenho paixão por aprender e desenvolver 
+                    soluções tecnológicas inovadoras que resolvem problemas reais.
+                </p>
+                <p>
+                    Com foco em desenvolvimento web e análise de sistemas, estou consolidando meus fundamentos em 
+                    programação e adquirindo experiência prática através de projetos pessoais e contribuições 
+                    em comunidades de código aberto.
+                </p>
+                <p>
+                    <strong>Filosofia:</strong> "A tecnologia é uma ferramenta poderosa para resolver problemas reais. 
+                    Meu objetivo é dominar as habilidades necessárias para criar soluções significativas."
+                </p>
+            </div>
+        </div>
+
+        <!-- Formação -->
+        <div class="section">
+            <h2 class="section-title">🎓 Formação Acadêmica</h2>
+            <table>
+                <tr>
+                    <th>Curso</th>
+                    <th>Instituição</th>
+                    <th>Status</th>
+                    <th>Período</th>
+                </tr>
+                <tr>
+                    <td><strong>Análise e Desenvolvimento de Sistemas</strong></td>
+                    <td>[Sua Instituição]</td>
+                    <td><span class="badge">Em Curso</span></td>
+                    <td>2026 - [Conclusão]</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Competências Técnicas -->
+        <div class="section">
+            <h2 class="section-title">🛠️ Competências Técnicas</h2>
+            
+            <h3 style="color: #0066cc; margin: 20px 0 15px 0;">Linguagens de Programação</h3>
+            <div class="skill-card">
+                <h4>JavaScript</h4>
+                <div class="skill-level">
+                    <label>Proficiência:</label>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <div class="progress-text">80%</div>
+                </div>
+                <p style="font-size: 0.9em; color: #666; margin-top: 10px;">Foco principal - DOM, APIs, Async/Await</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                <div class="skill-card">
+                    <h4>Python <span class="badge python" style="float: right;">Em Certificação</span></h4>
+                    <div class="skill-level">
+                        <label>Proficiência:</label>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%; background: #3776ab;"></div>
+                        </div>
+                        <div class="progress-text">60%</div>
+                    </div>
+                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">Fundamentos, OOP, Automação</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>C <span class="badge c" style="float: right;">Em Certificação</span></h4>
+                    <div class="skill-level">
+                        <label>Proficiência:</label>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%; background: #a8b9cc;"></div>
+                        </div>
+                        <div class="progress-text">60%</div>
+                    </div>
+                    <p style="font-size: 0.9em; color: #666; margin-top: 10px;">Fundamentos, Ponteiros, Estruturas</p>
+                </div>
+            </div>
+
+            <h3 style="color: #0066cc; margin: 25px 0 15px 0;">Ferramentas & Plataformas</h3>
+            <div class="tech-list">
+                <div class="tech-item">
+                    <strong>Git & GitHub</strong>
+                    <span>Versionamento</span>
+                </div>
+                <div class="tech-item">
+                    <strong>VS Code</strong>
+                    <span>Editor Principal</span>
+                </div>
+                <div class="tech-item">
+                    <strong>Terminal/CLI</strong>
+                    <span>Linha de Comando</span>
+                </div>
+                <div class="tech-item">
+                    <strong>Node.js</strong>
+                    <span>Runtime JS</span>
+                </div>
+                <div class="tech-item">
+                    <strong>npm</strong>
+                    <span>Gerenciador de Pacotes</span>
+                </div>
+                <div class="tech-item">
+                    <strong>HTML/CSS</strong>
+                    <span>Web Fundamentals</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificações -->
+        <div class="section">
+            <h2 class="section-title">📜 Certificações & Cursos</h2>
+            
+            <div class="cert-box">
+                <h4>🔄 Python Certification</h4>
+                <p><strong>Status:</strong> EM PROGRESSO</p>
+                <p><strong>Progresso:</strong> 80%</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div>
+                <p><strong>Tópicos:</strong> Fundamentos, Estruturas de Controle, OOP, Módulos, Exceções</p>
+            </div>
+
+            <div class="cert-box">
+                <h4>🔄 C Certification</h4>
+                <p><strong>Status:</strong> EM PROGRESSO</p>
+                <p><strong>Progresso:</strong> 70%</p>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <p><strong>Tópicos:</strong> Fundamentos, Ponteiros, Arrays, Estruturas, Alocação de Memória</p>
+            </div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="section">
+            <h2 class="section-title">🗺️ Roadmap Profissional 2026-2027</h2>
+            
+            <div class="roadmap">
+                <div class="roadmap-item q3">
+                    <h4>Q3 2026</h4>
+                    <p><strong>Consolidar Fundamentos</strong></p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">✓ JavaScript & Certificações<br>✓ Portfolio Criado<br>✓ Git/GitHub</p>
+                </div>
+
+                <div class="roadmap-item q4">
+                    <h4>Q4 2026</h4>
+                    <p><strong>Primeiro Projeto</strong></p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">✓ Completar Certificações<br>✓ TODO App<br>✓ Deploy GitHub Pages</p>
+                </div>
+
+                <div class="roadmap-item y2027">
+                    <h4>2027 - S1</h4>
+                    <p><strong>Full-Stack Development</strong></p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">✓ React.js<br>✓ Node.js/Express<br>✓ Databases (SQL)</p>
+                </div>
+
+                <div class="roadmap-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <h4>2027 - S2</h4>
+                    <p><strong>Especialização</strong></p>
+                    <p style="font-size: 0.9em; margin-top: 10px;">✓ TypeScript<br>✓ Docker & DevOps<br>✓ Cloud Computing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metas -->
+        <div class="section">
+            <h2 class="section-title">🎯 Objetivos Profissionais</h2>
+            <table>
+                <tr>
+                    <th>Categoria</th>
+                    <th>Objetivo</th>
+                    <th>Timeline</th>
+                </tr>
+                <tr>
+                    <td><strong>Aprendizado</strong></td>
+                    <td>Dominar 3 linguagens (JavaScript, Python, C)</td>
+                    <td>Q4 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>Projetos</strong></td>
+                    <td>Desenvolver 10+ projetos para portfólio</td>
+                    <td>2027</td>
+                </tr>
+                <tr>
+                    <td><strong>Comunidade</strong></td>
+                    <td>10 contribuições em projetos open source</td>
+                    <td>2027</td>
+                </tr>
+                <tr>
+                    <td><strong>Profissional</strong></td>
+                    <td>Primeiro projeto profissional pago</td>
+                    <td>2027</td>
+                </tr>
+                <tr>
+                    <td><strong>Técnico</strong></td>
+                    <td>Full-stack competente com DevOps basics</td>
+                    <td>2027</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Áreas de Interesse -->
+        <div class="section">
+            <h2 class="section-title">💡 Áreas de Interesse</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="skill-card">
+                    <h4>🌐 Desenvolvimento Web</h4>
+                    <p>Criar interfaces interativas e aplicações web modernas com JavaScript, React e Node.js</p>
+                </div>
+                <div class="skill-card">
+                    <h4>📊 Análise de Sistemas</h4>
+                    <p>Entender e resolver problemas complexos através da análise sistemática e design</p>
+                </div>
+                <div class="skill-card">
+                    <h4>⚙️ Programação de Baixo Nível</h4>
+                    <p>Explorar fundamentos computacionais com C, ponteiros e gerenciamento de memória</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🔧 Automação</h4>
+                    <p>Scripts e automação de tarefas com Python e ferramentas de desenvolvimento</p>
+                </div>
+                <div class="skill-card">
+                    <h4>🌱 Open Source</h4>
+                    <p>Contribuir para comunidades de código aberto e projetos colaborativos</p>
+                </div>
+                <div class="skill-card">
+                    <h4>📚 Aprendizado Contínuo</h4>
+                    <p>Manter-se atualizado com novas tecnologias e melhores práticas da indústria</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="section">
+            <h2 class="section-title">📊 Estatísticas de Aprendizado</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">3</div>
+                    <div>Linguagens Estudadas</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">2</div>
+                    <div>Certificações em Progresso</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">100%</div>
+                    <div>Dedicação ao Aprendizado</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 2em; font-weight: bold; margin-bottom: 5px;">&lt;1</div>
+                    <div>Anos na Tecnologia</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contato -->
+        <div class="section">
+            <h2 class="section-title">📬 Contato & Redes</h2>
+            <div class="contact-info">
+                <p style="margin-bottom: 15px; font-size: 1.1em;">Vamos conectar!</p>
+                <div>
+                    <a href="https://github.com/Dominikucb" target="_blank">🔗 GitHub: @Dominikucb</a>
+                    <br><br>
+                    <a href="#">📧 LinkedIn: [Seu Perfil]</a>
+                    <br><br>
+                    <a href="mailto:dominik.jesus@a.ucb.br">✉️ Email: dominik.jesus@a.ucb.br</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Disponibilidade -->
+        <div class="section">
+            <h2 class="section-title">🤝 Disponibilidade</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="skill-card">
+                    <h4>✅ Para Aprender</h4>
+                    <p>Sempre aberto a novas tecnologias e conceitos</p>
+                </div>
+                <div class="skill-card">
+                    <h4>✅ Para Colaborar</h4>
+                    <p>Projetos educacionais e open source</p>
+                </div>
+                <div class="skill-card">
+                    <h4>✅ Para Networking</h4>
+                    <p>Comunidade tech e eventos profissionais</p>
+                </div>
+                <div class="skill-card">
+                    <h4>✅ Para Mentoria</h4>
+                    <p>Buscando mentores experientes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Portfólio Profissional de Dominik do Nascimento de Jesus</p>
+            <p>Junho de 2026 | <a href="https://github.com/Dominikucb/portfolio-profissional" style="color: #0066cc; text-decoration: none;">Ver no GitHub</a></p>
+            <p style="margin-top: 10px; font-style: italic;">Este portfólio é um trabalho em progresso e será atualizado continuamente.</p>
+        </div>
+    </div>
+
+    <script>
+        // Instruções para converter para PDF
+        console.log('Para salvar este portfólio como PDF:');
+        console.log('1. Abra este arquivo no navegador');
+        console.log('2. Use Ctrl+P (ou Cmd+P no Mac)');
+        console.log('3. Selecione "Salvar como PDF"');
+        console.log('4. Clique em "Salvar"');
+    </script>
+</body>
+</html>
