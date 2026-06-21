@@ -76,8 +76,8 @@ portfolio-profissional/
 ## 📬 Contato & Redes
 
 - **GitHub**: [@Dominikucb](https://github.com/Dominikucb)
-- **LinkedIn**: [Seu perfil aqui]
-- **Email**: [Seu email aqui]
+- **LinkedIn**:[
+](https://www.linkedin.com/in/dominik-nascimento-619a74104/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BrcWAvdZ1QAaSTtTwvc%2BbFw%3D%3D)- **Email**: [Seu email aqui] Dominikn259@gmail.com
 
 ---
 
