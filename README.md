@@ -47,20 +47,6 @@ Seção em desenvolvimento. Meus primeiros projetos e estudos de caso serão doc
 
 ---
 
-## 📁 Estrutura do Portfólio
-
-```
-portfolio-profissional/
-├── README.md                 # Este arquivo
-├── PERFIL.md                 # Detalhes do perfil profissional
-├── TECNOLOGIAS.md            # Stack tecnológico
-├── CERTIFICACOES.md          # Certificações e cursos
-├── ESTUDOS_DE_CASO/          # Documentação de projetos
-│   └── exemplo.md
-└── RECURSOS/                 # Materiais e referências
-    └── recursos.md
-```
-
 ---
 
 ## 🎯 Objetivos Profissionais
@@ -101,6 +87,30 @@ portfolio-profissional/
 - [📖 Recursos](./RECURSOS.md)
 - [🗺️ Roadmap](./ROADMAP.md)
 
+Pitch
+
+Olá, meu nome é Dominik do Nascimento de Jesus e sou estudante de Análise e Desenvolvimento de Sistemas, com foco em Desenvolvimento Full Stack e interesse em criar soluções digitais modernas, escaláveis e orientadas a resultados.
+
+Atualmente, estou consolidando minha base técnica em JavaScript, enquanto aprofundo meus conhecimentos em Python e C por meio de certificações, estudos direcionados e projetos práticos.
+
+Stack e Competências
+
+* Desenvolvimento Web Front-end e Back-end
+* JavaScript
+* Python
+* C
+* APIs REST
+* Estruturação e otimização de código
+* Análise e arquitetura de sistemas
+* Versionamento com Git e GitHub
+* Metodologias Ágeis
+* Resolução de problemas técnicos
+
+Objetivo Profissional
+
+Meu objetivo é evoluir para uma carreira sólida em Desenvolvimento Full Stack, participando da criação de aplicações modernas, escaláveis e alinhadas às melhores práticas do mercado.
+
+Estou em busca de oportunidades que me permitam aplicar meus conhecimentos, adquirir experiência prática e contribuir com soluções inovadoras para empresas e usuários.
 
 **Última atualização**: Junho 2026
 
