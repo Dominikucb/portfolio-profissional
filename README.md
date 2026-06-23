@@ -101,7 +101,6 @@ portfolio-profissional/
 - [📖 Recursos](./RECURSOS.md)
 - [🗺️ Roadmap](./ROADMAP.md)
 
----PITCH_PROFISSIONAL.md
 
 **Última atualização**: Junho 2026
 
